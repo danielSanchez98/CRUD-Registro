@@ -1,3 +1,15 @@
+<?php
+    require('conexion.php');
+
+    $sql="SELECT * FROM  registros";
+    $resultado=mysqli_query($conexion,$sql);
+
+    $resultado_varchar=mysqli_fetch_all($resultado);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +29,7 @@
             <div class="formulario">
                 <h2>Registro</h2>
 
-                <form action="" method="post">
+                <form action="agregarRegistro.php" method="post">
 
                     <label for="nombre">nombre</label>
                     <input type="text" name="nombre" id="nombre" autofocus>
@@ -57,25 +69,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php foreach($resultado_varchar as $datoVar): ?>
+                        <tr>
 
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td> </td>
-                    <td>
-                         <a id="edit" href="edit.php">Edit</a> 
-                         <a id="delete" href=""> Delete</a> 
+                            <td><?php echo $datoVar[1]?></td>
+                            <td><?php echo $datoVar[2]?></td>
+                            <td><?php echo $datoVar[3]?></td>
+                            <td><?php echo $datoVar[4]?></td>
+                            <td><?php echo $datoVar[5]?> </td>
+                            <td>
+                                <a id="edit" href="edit.php">Edit</a> 
+                                <a id="delete" href=""> Delete</a>                        
+
+                            </td>
+                        </tr>
+
                         
-
-                    </td>
-
-
-                    </tr>
-
-                    
-                    
+                    <?php endforeach;?>   
                 </tbody>
             </table>
 

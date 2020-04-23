@@ -7,7 +7,8 @@ CREATE TABLE registros(
     nombre VARCHAR(255) NOT NULL,
     apellido VARCHAR(255) NOT NULL,
     direccion VARCHAR(255) NOT NULL,
-    telefono VARCHAR(255) NOT NULL
+    telefono VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 
 );
 
