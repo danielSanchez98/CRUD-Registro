@@ -78,8 +78,8 @@
                             <td><?php echo $datoVar[4]?></td>
                             <td><?php echo $datoVar[5]?> </td>
                             <td>
-                                <a id="edit" href="edit.php">Edit</a> 
-                                <a id="delete" href=""> Delete</a>                        
+                                <a id="edit" href="edit.php?id=<?php echo $datoVar[0];?>">Edit</a> 
+                                <a id="delete" href="eliminar.php?id=<?php echo $datoVar[0];?>"> Delete</a>                        
 
                             </td>
                         </tr>
