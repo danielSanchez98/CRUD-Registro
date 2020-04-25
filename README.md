@@ -2,4 +2,4 @@
 
 ## Interfaz 
 
-![stack Overflow](https://github.com/danielSanchez98/CRUD-Registro/blob/master/assets/Screenshots/Screenshot_1.png)
+![stack Overflow](https://raw.githubusercontent.com/danielSanchez98/CRUD-Registro/master/assets/Screenshots/Screenshot_1.png)
