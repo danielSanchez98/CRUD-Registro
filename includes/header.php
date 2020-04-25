@@ -10,4 +10,5 @@
 
     <div class="nav">
         <a href="index.php">CRUD Registro</a>
+        <input id="buscar" type="text" placeholder="Search.." >
     </div>
