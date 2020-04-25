@@ -1,59 +1,27 @@
 <?php
     require('conexion.php');
-
+   
+    $accionLink='agregarRegistro.php'; 
+    $update='';
+    $btnLabel='Register';
+    $titleForm='Registre su información';
+    $edit=false;
+    $resultado_personas=[''];
+   
     $sql="SELECT * FROM  registros";
     $resultado=mysqli_query($conexion,$sql);
 
-    $resultado_varchar=mysqli_fetch_all($resultado);
+    $resultado_lista=mysqli_fetch_all($resultado);
 
 ?>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/CSS/style.css">
-</head>
-<body>
-
-    <div class="nav">
-        <a href="index.php">CRUD Registro</a>
-    </div>
+<?php require('includes/header.php');?>
     
-    <div class="container">
-        <div class="registro">
-            <div class="formulario">
-                <h2>Registro</h2>
+    
 
-                <form action="agregarRegistro.php" method="post">
-
-                    <label for="nombre">nombre</label>
-                    <input type="text" name="nombre" id="nombre" autofocus>
-
-                    <label for="apellido">apellido</label>
-                    <input type="text" name="apellido" id="apellido">
-
-                    <label for="direccion">direccion</label>
-                    <input type="text" name="direccion" id="direccion">
-
-                    <label for="telefono">telefono</label>
-                    <input type="text" name="telefono" id="telefono">
-
-                    <button type="submit">Register</button>
-                    
-
-
-                </form>
-            </div>
-
-
-
-
-        </div>
+    <?php require('includes/formulario.php');?>
 
         <div class="resultados">
 
@@ -69,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($resultado_varchar as $datoVar): ?>
+                    <?php foreach($resultado_lista as $datoVar): ?>
                         <tr>
 
                             <td><?php echo $datoVar[1]?></td>
@@ -78,7 +46,7 @@
                             <td><?php echo $datoVar[4]?></td>
                             <td><?php echo $datoVar[5]?> </td>
                             <td>
-                                <a id="edit" href="edit.php?id=<?php echo $datoVar[0];?>">Edit</a> 
+                                <a id="edit" href="editar.php?id=<?php echo $datoVar[0];?>">Edit</a> 
                                 <a id="delete" href="eliminar.php?id=<?php echo $datoVar[0];?>"> Delete</a>                        
 
                             </td>

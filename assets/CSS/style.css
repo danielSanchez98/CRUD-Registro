@@ -60,6 +60,9 @@ button{
     grid-row: 1/2;
     text-align: center;
 }
+.update{
+    grid-column: 2; 
+}
 .resultados{
     grid-column: 2 / 4;
     grid-row: 1 / 3;
