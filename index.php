@@ -33,6 +33,7 @@
                         <th>Direccion</th>
                         <th>Telefono</th>
                         <th>Creado</th>
+                        <th>Modificado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -45,6 +46,7 @@
                             <td><?php echo $datoVar[3]?></td>
                             <td><?php echo $datoVar[4]?></td>
                             <td><?php echo $datoVar[5]?> </td>
+                            <td><?php echo $datoVar[6]?> </td>
                             <td>
                                 <a id="edit" href="editar.php?id=<?php echo $datoVar[0];?>">Edit</a> 
                                 <a id="delete" href="eliminar.php?id=<?php echo $datoVar[0];?>"> Delete</a>                        
